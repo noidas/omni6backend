@@ -34,4 +34,4 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'temp')));
 // Adiciona o arquivo de rotas no servidor
 app.use(require('./routes'));
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
