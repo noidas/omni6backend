@@ -20,7 +20,7 @@ mongoose.connect('mongodb+srv://bigdata:bigdata@cluster0-k6myc.mongodb.net/omni6
   useUnifiedTopology: true
 });
 // Midleware global que adiciona uma nova variável dentro de req
-app.use((req, res) => {
+app.use((req, res, next) => {
   req.io = io;
 
   return next();
