@@ -1,5 +1,5 @@
-const File = require('../models/File');
-const Box = require('../models/Box');
+const File = require("../models/File");
+const Box = require("../models/Box");
 
 class FileController {
   async store(req, res) {
@@ -14,7 +14,7 @@ class FileController {
 
     await box.save();
 
-    req.io.sockets.in(box._id).emit('file', file);
+    req.io.sockets.in(box._id).emit("file", file);
 
     return res.json(file);
   }
